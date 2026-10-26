@@ -1303,12 +1303,7 @@ function calcPacote(suite, ci, co, payPax, fisico, capBase, precoNoite){
     try { window.top.location.href = url; return; } catch(e) {}
     window.location.href = url;
   }
-  document.addEventListener('click', function(e){
-    var a = e.target.closest && e.target.closest('a[href*="wa.me/"], a[href*="api.whatsapp.com/"]');
-    if (!a) return;
-    e.preventDefault();
-    abrirWhats(a.href);
-  });
+  /* No site publicado, os links do WhatsApp abrem nativamente (mais confiável no celular). */
   window.copiarMsgReserva = function(btn){
     var t = window._msgReserva || '';
     function ok(){ btn.textContent = 'Mensagem copiada ✓'; }
